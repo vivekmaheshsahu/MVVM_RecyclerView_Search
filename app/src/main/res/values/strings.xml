@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Greenlight</string>
+    <string name="no_internet">No internet</string>
+    <string name="no_internet_connection">No internet connectivity. Please check your network
+    </string>
+    <string name="input_output_error_occured">Input output error occurred</string>
+    <string name="oops_some_thing_happened_wrong">Oops!! Something happened. Please try again
+    </string>
+    <string name="yes">YES</string>
+    <string name="search_name">Search By Name</string>
+
+
+</resources>
