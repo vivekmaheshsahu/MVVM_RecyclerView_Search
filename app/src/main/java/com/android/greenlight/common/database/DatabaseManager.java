@@ -13,7 +13,7 @@ public class DatabaseManager {
 
     private static DatabaseManager databaseManagerInstance;
     private static SQLiteOpenHelper mDatabaseHelper;
-    private AtomicInteger mOpenCounter = new AtomicInteger();        //We have a counter which indicate how many times database is opened.
+    private final AtomicInteger mOpenCounter = new AtomicInteger();        //We have a counter which indicate how many times database is opened.
     private SQLiteDatabase mDatabase;
 
     /**

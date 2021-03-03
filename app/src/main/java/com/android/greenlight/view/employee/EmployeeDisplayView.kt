@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.greenlight.R
 import com.android.greenlight.common.Adapter.employee.EmployeeDisplayAdapter
+import com.android.greenlight.common.utility.Utility
 import com.android.greenlight.viewmodel.Employee.EmployeeDisplayViewModel
 import com.android.greenlight.viewmodel.Employee.IEmployeeDisplayViewModel
-import com.android.greenlight.common.utility.Utility
 import java.util.*
 
 
@@ -29,35 +29,35 @@ class EmployeeDisplayView : IEmployeeDisplayView, AppCompatActivity(), SearchVie
     var utility = Utility()
     var projectDetails = ArrayList<String>()
     var checkedItem = 0
-    var selectedProjectId:Int = 0
+    var selectedProjectId: Int = 0
     var title = ""
     var formId: String = ""
     var mRecyclerView: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.employee_display_layout)
-        var tex : TextView = findViewById(R.id.toolbar_title)
-        tex.setText("Metrics")
-        var text : TextView = findViewById(R.id.textView)
-        text.setText("Montreal Performance")
-        var texview : TextView = findViewById(R.id.title)
-        texview.setText("Name")
+        var tex: TextView = findViewById(R.id.toolbar_title)
+        tex.text = "Metrics"
+        var text: TextView = findViewById(R.id.textView)
+        text.text = "Montreal Performance"
+        var texview: TextView = findViewById(R.id.title)
+        texview.text = "Name"
         mRecyclerView = findViewById(R.id.recycler_view123)
         emptyLayout = findViewById(R.id.empty_midline_list)
         var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         var itemDecoration: RecyclerView.ItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         mRecyclerView?.addItemDecoration(itemDecoration)
-        mRecyclerView?.setLayoutManager(layoutManager)
+        mRecyclerView?.layoutManager = layoutManager
         mSearchView = findViewById(R.id.searchview_childlist)
         mSearchView?.setOnQueryTextListener(this)
         mSearchView?.setOnClickListener(View.OnClickListener
         {
-            mSearchView?.setIconified(false)
+            mSearchView?.isIconified = false
         })
         viewModel = EmployeeDisplayViewModel()
         (viewModel as EmployeeDisplayViewModel).attachView(this)
 
-     }
+    }
 
     override fun setAdapter(mEmployeeList: ArrayList<String>) {
         if (mEmployeeList == null || mEmployeeList.size < 1) {
@@ -66,9 +66,10 @@ class EmployeeDisplayView : IEmployeeDisplayView, AppCompatActivity(), SearchVie
         }
         if (adapter == null) {
             adapter = EmployeeDisplayAdapter(getContext(), mEmployeeList)
-            mRecyclerView?.setAdapter(adapter)
+            mRecyclerView?.adapter = adapter
         }
     }
+
     override fun getContext(): Context {
         return this
     }
@@ -79,19 +80,19 @@ class EmployeeDisplayView : IEmployeeDisplayView, AppCompatActivity(), SearchVie
     }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
-        adapter?.getFilter()?.filter(query);
-        return false;
+        adapter?.filter?.filter(query)
+        return false
     }
 
     override fun onQueryTextChange(newText: String?): Boolean {
-        adapter?.getFilter()?.filter(newText);
-        return false;
+        adapter?.filter?.filter(newText)
+        return false
     }
 
     override fun onBackPressed() {
         // close search view on back button pressed
-        if (!mSearchView?.isIconified()!!) {
-            mSearchView?.setIconified(true)
+        if (!mSearchView?.isIconified!!) {
+            mSearchView?.isIconified = true
             return
         }
         super.onBackPressed()

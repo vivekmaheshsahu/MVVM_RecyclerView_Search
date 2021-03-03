@@ -9,7 +9,7 @@ class ZoneDetails() : IZoneDetails {
     private var mContext: Context? = null
     private var dbHelper: DBHelper? = null
 
-   constructor(mContext: Context):this() {
+    constructor(mContext: Context) : this() {
         this.mContext = mContext
         dbHelper = DBHelper(mContext)
     }

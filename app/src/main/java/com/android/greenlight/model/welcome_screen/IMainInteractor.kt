@@ -1,11 +1,10 @@
 package com.android.greenlight.model.welcome_screen
 
 import android.content.Context
-import org.json.JSONException
-import org.json.JSONObject
-import kotlin.jvm.Throws
 import com.android.greenlight.common.data.model.Employee
 import com.android.greenlight.common.data.model.Zone
+import org.json.JSONException
+import org.json.JSONObject
 
 /**
  * @author Vivek
@@ -23,8 +22,8 @@ interface IMainInteractor {
         fun onFailure(message: String)
     }
 
-    fun saveEmp(emp : Employee)
-    fun saveZone(zon : Zone)
-    fun saveRel(zon : Zone)
-    fun saveArea(zon : Zone)
+    fun saveEmp(emp: Employee)
+    fun saveZone(zon: Zone)
+    fun saveRel(zon: Zone)
+    fun saveArea(zon: Zone)
 }

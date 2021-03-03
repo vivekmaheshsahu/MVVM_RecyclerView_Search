@@ -13,11 +13,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.greenlight.common.Adapter.zone.ZoneDetails
 import com.android.greenlight.R
+import com.android.greenlight.common.Adapter.zone.ZoneDetails
 import com.android.greenlight.common.data.model.completeFiledForm
-import com.android.greenlight.view.region.RegionDisplayView
 import com.android.greenlight.common.utility.Utility
+import com.android.greenlight.view.region.RegionDisplayView
 import com.android.greenlight.viewmodel.zone.IZoneViewModel
 import com.android.greenlight.viewmodel.zone.ZoneViewModel
 import java.util.*
@@ -32,20 +32,20 @@ class ZoneActivity : IZoneView, AppCompatActivity() {
     var utility = Utility()
     var projectDetails = ArrayList<String>()
     var checkedItem = 0
-    var selectedProjectId:Int = 0
+    var selectedProjectId: Int = 0
     var title = ""
     var formId: String = ""
     var mRecyclerView: RecyclerView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.midline_interview_layout)
-        var tex : TextView = findViewById(R.id.toolbar_title)
-        tex.setText("Metrics")
-        var text : TextView = findViewById(R.id.textView)
-        text.setText("France Performance")
-        var texview : TextView = findViewById(R.id.title)
-        texview.setText("Zone")
-        val actionBar: ActionBar ?= null
+        setContentView(R.layout.common_layout)
+        var tex: TextView = findViewById(R.id.toolbar_title)
+        tex.text = "Metrics"
+        var text: TextView = findViewById(R.id.textView)
+        text.text = "France Performance"
+        var texview: TextView = findViewById(R.id.title)
+        texview.text = "Zone"
+        val actionBar: ActionBar? = null
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
         mRecyclerView = findViewById(R.id.recycler_view123)
@@ -53,14 +53,15 @@ class ZoneActivity : IZoneView, AppCompatActivity() {
         var layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         var itemDecoration: RecyclerView.ItemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         mRecyclerView?.addItemDecoration(itemDecoration)
-        mRecyclerView?.setLayoutManager(layoutManager)
+        mRecyclerView?.layoutManager = layoutManager
 
         presenter = ZoneViewModel()
         (presenter as ZoneViewModel).attachView(this)
 
-     }
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.getItemId()) {
+        when (item.itemId) {
             android.R.id.home -> {
                 finish()
                 return true
@@ -81,12 +82,13 @@ class ZoneActivity : IZoneView, AppCompatActivity() {
                     startActivity(intent)
                 }
             })
-            mRecyclerView?.setAdapter(zoneDetails)
+            mRecyclerView?.adapter = zoneDetails
         } else {
             zoneDetails!!.swapDataList(mWomenList)
             zoneDetails!!.notifyDataSetChanged()
         }
     }
+
     override fun getContext(): Context {
         return this
     }

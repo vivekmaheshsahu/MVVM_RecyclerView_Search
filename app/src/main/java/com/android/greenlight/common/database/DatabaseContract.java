@@ -8,7 +8,6 @@ import android.os.Environment;
 
 public final class DatabaseContract {
 
-
     public static final String DATABASE_NAME = "GreenDb.sr";
     public static final int DATABASE_VERSION = 1;
     public static final String DB_LOCATION = Environment.getExternalStorageDirectory() + "/GreenLight";
@@ -21,7 +20,7 @@ public final class DatabaseContract {
     public static final String NOT_NULL = " NOT NULL ";
 
     public static final class ZoneTable {
-        public static final String TABLE_NAME = "zoneDetails";
+        public static final String TABLE_NAME = "zone";
         public static final String COLUMN_ZONE_ID = "zone_id";
         public static final String COLUMN_ZONE_NAME = "zone_name";
         public static final String COLUMN_ZONE_TERRITORY = "zone_territory";

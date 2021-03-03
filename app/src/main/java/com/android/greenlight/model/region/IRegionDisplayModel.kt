@@ -4,6 +4,6 @@ import android.database.Cursor
 
 interface IRegionDisplayModel {
 
-   fun fetchAllParticipants(formId:String): Cursor?
+    fun fetchAllParticipants(formId: String): Cursor?
 
 }

@@ -6,24 +6,26 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.android.greenlight.common.data.model.completeFiledForm
 import com.android.greenlight.R
+import com.android.greenlight.common.data.model.completeFiledForm
+
+// Region adapter class is used to Region data of different area in recycler view
 
 class RegionDisplayAdapter() : RecyclerView.Adapter<RegionDisplayAdapter.ViewHolder>() {
-    var mContext :  Context ? = null
-    var formId =""
+    var mContext: Context? = null
+    var formId = ""
     private lateinit var mOnItemClickListener: OnItemClickListener
-    var mWomenList :  List<completeFiledForm>? = null
+    var mWomenList: List<completeFiledForm>? = null
 
-    constructor(mContext: Context, mWomenList: List<completeFiledForm>, formID: String, mOnItemClickListener: OnItemClickListener):this(){
-      this.mContext = mContext
-      this.mWomenList = mWomenList
-      this.formId = formID
-      this.mOnItemClickListener = mOnItemClickListener
+    constructor(mContext: Context, mWomenList: List<completeFiledForm>, formID: String, mOnItemClickListener: OnItemClickListener) : this() {
+        this.mContext = mContext
+        this.mWomenList = mWomenList
+        this.formId = formID
+        this.mOnItemClickListener = mOnItemClickListener
     }
 
     interface OnItemClickListener {
-        fun onItemClick(uniqueId: String,name : String, form_id: String)
+        fun onItemClick(uniqueId: String, name: String, form_id: String)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -48,10 +50,11 @@ class RegionDisplayAdapter() : RecyclerView.Adapter<RegionDisplayAdapter.ViewHol
             if (listModel != null) {
                 textViewName.text = listModel.name
                 textViewName.setOnClickListener {
-                    mOnItemClickListener.onItemClick(listModel!!.unique_id, listModel.name, formId)
+                    mOnItemClickListener.onItemClick(listModel.unique_id, listModel.name, formId)
                 }
             }
         }
+
         init {
             textViewName = itemView.findViewById(R.id.textview_name)
         }

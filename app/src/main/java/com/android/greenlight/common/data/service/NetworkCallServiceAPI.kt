@@ -1,10 +1,10 @@
 package com.android.greenlight.common.data.service
 
+import com.android.greenlight.common.data.Url.Companion.AUTHENTICATE
 import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Headers
-import com.android.greenlight.common.data.Url.Companion.AUTHENTICATE
 import retrofit2.http.GET
+import retrofit2.http.Headers
 
 /**
  * @author Vivek

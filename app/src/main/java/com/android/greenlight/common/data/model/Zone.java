@@ -16,8 +16,7 @@ public class Zone {
         this.zoneTerritory = zoneTerritory;
     }
 
-    public Zone(String zoneName,int zoneId)
-    {
+    public Zone(String zoneName, int zoneId) {
         this.zoneName = zoneName;
         this.zoneId = zoneId;
     }

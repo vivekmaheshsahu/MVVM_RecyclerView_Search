@@ -6,7 +6,7 @@ interface IEmployeeDisplayView {
 
     fun getContext(): Context
 
-    fun setAdapter(mEmployeeList : ArrayList<String>)
+    fun setAdapter(mEmployeeList: ArrayList<String>)
 
 
 }

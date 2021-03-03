@@ -7,7 +7,7 @@ interface IRegionDisplayView {
 
     fun getContext(): Context
 
-    fun setAdapter(mWomenList : List<completeFiledForm>)
+    fun setAdapter(mWomenList: List<completeFiledForm>)
 
 
 }

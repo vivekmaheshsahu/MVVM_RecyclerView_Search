@@ -9,17 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.greenlight.R
 import com.android.greenlight.common.data.model.completeFiledForm
 
-class ZoneDetails() : RecyclerView.Adapter<ZoneDetails.ViewHolder>() {
-    var mContext :  Context ? = null
-    var formId =""
-    private lateinit var mOnItemClickListener: OnItemClickListener
-    var mWomenList :  List<completeFiledForm>? = null
+// Zone adapter class is used to Zone data of different area in recycler view
 
-    constructor(mContext: Context, mWomenList: List<completeFiledForm>, formID: String, mOnItemClickListener: OnItemClickListener):this(){
-      this.mContext = mContext
-      this.mWomenList = mWomenList
-      this.formId = formID
-      this.mOnItemClickListener = mOnItemClickListener
+class ZoneDetails() : RecyclerView.Adapter<ZoneDetails.ViewHolder>() {
+    var mContext: Context? = null
+    var formId = ""
+    private lateinit var mOnItemClickListener: OnItemClickListener
+    var mWomenList: List<completeFiledForm>? = null
+
+    constructor(mContext: Context, mWomenList: List<completeFiledForm>, formID: String, mOnItemClickListener: OnItemClickListener) : this() {
+        this.mContext = mContext
+        this.mWomenList = mWomenList
+        this.formId = formID
+        this.mOnItemClickListener = mOnItemClickListener
     }
 
     interface OnItemClickListener {
@@ -48,7 +50,7 @@ class ZoneDetails() : RecyclerView.Adapter<ZoneDetails.ViewHolder>() {
             if (listModel != null) {
                 textViewName.text = listModel.name
                 textViewName.setOnClickListener {
-                    mOnItemClickListener.onItemClick(listModel!!.unique_id,listModel.name, formId)
+                    mOnItemClickListener.onItemClick(listModel.unique_id, listModel.name, formId)
                 }
             }
         }

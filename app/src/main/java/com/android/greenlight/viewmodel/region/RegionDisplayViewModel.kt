@@ -8,8 +8,8 @@ import java.util.*
 
 class RegionDisplayViewModel : IRegionDisplayViewModel<IRegionDisplayView> {
 
-    var view : IRegionDisplayView? = null
-    var model : IRegionDisplayModel? = null
+    var view: IRegionDisplayView? = null
+    var model: IRegionDisplayModel? = null
 
     override fun getAllParticipants(formId: String) {
         val womenList: MutableList<completeFiledForm> = ArrayList()

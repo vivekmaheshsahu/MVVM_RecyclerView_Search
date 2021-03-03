@@ -8,8 +8,8 @@ import java.util.*
 
 class ZoneViewModel : IZoneViewModel<IZoneView> {
 
-    var view : IZoneView? = null
-    var interactor : IZoneDetails? = null
+    var view: IZoneView? = null
+    var interactor: IZoneDetails? = null
 
     override fun getAllParticipants(formId: String) {
         val womenList: MutableList<completeFiledForm> = ArrayList()

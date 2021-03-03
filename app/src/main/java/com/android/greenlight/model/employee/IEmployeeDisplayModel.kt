@@ -4,6 +4,6 @@ import android.database.Cursor
 
 interface IEmployeeDisplayModel {
 
-   fun fetchAllParticipants(formId:String): Cursor?
+    fun fetchAllParticipants(formId: String): Cursor?
 
 }

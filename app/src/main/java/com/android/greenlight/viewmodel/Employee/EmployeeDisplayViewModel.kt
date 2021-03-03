@@ -8,8 +8,8 @@ import java.util.*
 
 class EmployeeDisplayViewModel : IEmployeeDisplayViewModel<IEmployeeDisplayView> {
 
-    var view : IEmployeeDisplayView? = null
-    var model : IEmployeeDisplayModel? = null
+    var view: IEmployeeDisplayView? = null
+    var model: IEmployeeDisplayModel? = null
 
     override fun getAllParticipants(formId: String) {
         val womenList: MutableList<completeFiledForm> = ArrayList()
