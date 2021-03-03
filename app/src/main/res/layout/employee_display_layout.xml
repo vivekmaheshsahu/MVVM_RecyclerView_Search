@@ -37,11 +37,11 @@
         android:background="@drawable/bg_searchview"
         app:defaultQueryHint=" Search By Name"
         app:iconifiedByDefault="false"
+        app:queryHint="@string/search_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbarMidline"
-        app:queryHint="@string/search_name"
         tools:ignore="MissingConstraints" />
 
     <TextView

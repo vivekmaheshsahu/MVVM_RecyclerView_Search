@@ -11,13 +11,12 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.android.greenlight.R
 import com.android.greenlight.common.Adapter.employee.EmployeeDisplayAdapter
 import com.android.greenlight.common.utility.Utility
 import com.android.greenlight.viewmodel.Employee.EmployeeDisplayViewModel
 import com.android.greenlight.viewmodel.Employee.IEmployeeDisplayViewModel
 import java.util.*
-
+import com.android.greenlight.R
 
 class EmployeeDisplayView : IEmployeeDisplayView, AppCompatActivity(), SearchView.OnQueryTextListener {
 
