@@ -16,18 +16,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Greenlight">
-        <activity android:name=".area.AreaDisplayActivity"></activity>
-        <activity android:name=".employee.EmployeeDisplayActivity"/>
-        <activity android:name=".interviewBeneficaryModule.InterviewActivity">
+        <activity android:name=".view.area.AreaDisplayView"></activity>
+        <activity android:name=".view.employee.EmployeeDisplayView"/>
+        <activity android:name=".view.zone.ZoneActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".main.MainActivity" />
+                android:value=".view.welcome_screen.MainView" />
         </activity>
-        <activity android:name=".regionDisplay.RegionDisplayActivity"/>
-        <activity android:name=".main.MainActivity">
+        <activity android:name=".view.region.RegionDisplayView"/>
+        <activity android:name=".view.welcome_screen.MainView">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".main.MainActivity" />
+                android:value=".view.welcome_screen.MainView" />
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
